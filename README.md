@@ -2,9 +2,11 @@
 
 This is a object storage app. App provides a way to list, add and remove buckets as well as add, list and remove objects from a bucket. It also renders object and bucket details.
 
-App must have correct API URLs to work and pass the tests. For demo purposes I added mock www.better.si API URL, which doesn't return anything.
+For working app (and pass the tests), correct API URLs must be inserted. For demo purposes I added mock www.better.si API URL, which doesn't return anything.
 
 Main features are lazy loading modules, stateless/stateful components, unit tests. Implementing RxJS would be an overkill for this kind of app.
+
+Demo can be done on tech hire meeting.
 
 ###### Docker (works only with correct API URL)
 
