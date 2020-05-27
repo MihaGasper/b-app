@@ -11,7 +11,7 @@ import { ModalComponent } from '../../../shared/component/modal/modal.component'
 import { TabsModule } from 'ngx-bootstrap/tabs';
 
 describe('BucketDetailsComponent', () => {
-  let fixture:ComponentFixture<BucketDetailsComponent>;
+  let fixture: ComponentFixture<BucketDetailsComponent>;
   let component: BucketDetailsComponent;
   let element: HTMLElement;
   let mockApiService;
@@ -24,19 +24,19 @@ describe('BucketDetailsComponent', () => {
     files = {
       bucketSize: 75654,
       objects:  [{
-          last_modified: "2020-05-04T14:53:31.671541661Z",
-          name: "file-5.png",
+          last_modified: '2020-05-04T14:53:31.671541661Z',
+          name: 'file-5.png',
           size: 75654
         }
       ]
     }
     bucket = {
-      id: "bucket1",
+      id: 'bucket1',
       location: {
-        id: "571E30F3-7A96-45FF-8FDE-0A3F0E6BBDF4",
-        name: "Ljubljana"
+        id: '571E30F3-7A96-45FF-8FDE-0A3F0E6BBDF4',
+        name: 'Ljubljana'
       },
-      name: "bucket1"
+      name: 'bucket1'
     }
 
     TestBed.configureTestingModule({
@@ -57,7 +57,7 @@ describe('BucketDetailsComponent', () => {
     fixture = TestBed.createComponent(BucketDetailsComponent);
     component = fixture.componentInstance;
     element = fixture.nativeElement;
-  })
+  });
 
   it('should create BucketDetailsComponent', () => {
     expect(component).toBeTruthy();
@@ -77,7 +77,7 @@ describe('BucketDetailsComponent', () => {
     });
   });
 
-  it('should render in template file name, file date and file size',async (() => {
+  it('should render in template file name, file date and file size', async (() => {
     mockApiService.getFiles.and.returnValue(of(files));
     mockApiService.getBucket.and.returnValue(of(bucket));
 
@@ -100,17 +100,17 @@ describe('BucketDetailsComponent', () => {
 
   it('should not display the modal unless the delete button is clicked', () => {
     expect(modalService.modalsCount).toBe(0);
-  })
+  });
 
-  it('should display the modal when delete button is clicked',() => {
+  it('should display the modal when delete button is clicked', () => {
     mockApiService.getFiles.and.returnValue(of(files));
     mockApiService.getBucket.and.returnValue(of(bucket));
     fixture.detectChanges();
 
-    let openModalButton = fixture.debugElement.query(By.css(".btn-open-modal"));
-    spyOn(component,"deleteFileFromBucket").and.callThrough();
+    let openModalButton = fixture.debugElement.query(By.css('.btn-open-modal'));
+    spyOn(component, 'deleteFileFromBucket').and.callThrough();
 
-    openModalButton.triggerEventHandler('click',null);
+    openModalButton.triggerEventHandler('click', null);
     expect(component.deleteFileFromBucket).toHaveBeenCalled();
 
     fixture.whenStable().then(() => {
