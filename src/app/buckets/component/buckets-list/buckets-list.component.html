@@ -1,0 +1,21 @@
+<div class="row bg-light p-3 mt-3">
+  <p class="buckets-count">All Buckets ({{ bucketsList?.length || '0' }})</p>
+  <table class="table">
+    <thead class="bg-white">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Location</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let bucket of bucketsList">
+      <th scope="row">
+        <a class="nav-link" href="#" [routerLink]="[bucket.id]">
+          {{ bucket.name }}
+        </a>
+      </th>
+      <th scope="row" class="location-name">{{ bucket.location.name }}</th>
+    </tr>
+    </tbody>
+  </table>
+</div>

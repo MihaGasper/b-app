@@ -1,0 +1,29 @@
+<div class="modal-content">
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-12 my-4 text-center">
+        <h4 class="modal-title pull-left">{{ modalTitle }}</h4>
+      </div>
+      <div class="col text-center">
+        <button
+          (click)="delete()"
+          type="button"
+          class="btn-danger btn-delete"
+          aria-label="Close"
+        >Delete</button>
+      </div>
+      <div class="col text-center">
+        <button
+          (click)="bsModalRef.hide()"
+          type="button"
+          class="btn-default btn-cancel"
+          aria-label="Close"
+        >
+          {{ closeBtnName }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

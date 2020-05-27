@@ -1,0 +1,63 @@
+<h4 class="pb-2">MyNewStorage</h4>
+<tabset>
+  <tab
+    heading="Files"
+    id="tab1"
+    class="bg-light p-3"
+  >
+    <div *ngIf="files">
+      <div class="row">
+        <div class="col">
+          <div class="my-3 files-count">All Files ({{ filesCount }})</div>
+        </div>
+        <div class="col">
+          <div class="my-3">
+            <div class="input-group">
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="file" aria-describedby="file" (change)="handleUpload($event.target.files[0])">
+                <label class="custom-file-label" for="file">Upload file</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <table class="table">
+      <thead class="bg-white">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Last modified</th>
+          <th scope="col">Size</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let file of files">
+        <th scope="row" class="file-name">{{ file.name }}</th>
+        <th scope="row" class="file-date">{{ file.last_modified | date:"MM/dd/yyyy" }}</th>
+        <th scope="row" class="file-size">{{ file.size | fileSize }}</th>
+        <th scope="row"><button class="btn btn-open-modal" (click)="deleteFileFromBucket(file.name)">X</button></th>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </tab>
+  <tab
+    heading="Details"
+    class="bg-light p-3"
+  >
+    <div class="row my-3">
+        <div class="col">
+          <div *ngIf="bucket">
+            <p class="my-2">Bucket Name: {{ bucket.name }}</p>
+            <p class="my-2">Bucket Location: {{ bucket.location.name }}</p>
+            <p class="my-2">Bucket Size: {{ bucketSize | fileSize }} </p>
+          </div>
+        </div>
+        <div class="col text-right">
+          <button (click)="deleteBucket()" class="btn-danger mt-4 mb-4">Delete Bucket</button>
+        </div>
+      </div>
+  </tab>
+</tabset>
+
+
