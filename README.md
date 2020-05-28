@@ -6,7 +6,7 @@ For working app (and pass the tests), correct API URLs must be inserted. For dem
 
 Main features are lazy loading modules, stateless/stateful components, unit tests. Implementing RxJS would be an overkill for this kind of app.
 
-Demo can be done on tech hire meeting.
+Demo can be done on tech hire meeting. Wireframes in pdf are included.
 
 ###### Docker (works only with correct API URL)
 
