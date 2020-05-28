@@ -10,12 +10,12 @@ Demo can be done on tech hire meeting.
 
 ###### Docker (works only with correct API URL)
 
-Run `cd storage && docker-compose up -d  --build` Navigate to _http://localhost:4200_.
+Run `docker-compose up -d  --build` Navigate to _http://localhost:4200_.
 
 ###### Run locally (works only with correct API URL)
 
-Run `cd storage && npm i && ng serve`
+Run `npm i && ng serve`
 
 ###### Run tests (works only with correct API URL)
 
-Run `cd storage && npm i && ng test`
+Run `npm i && ng test`
