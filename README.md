@@ -4,7 +4,7 @@ This is a object storage app. App provides a way to list, add and remove buckets
 
 For working app (and pass the tests), correct API URLs must be inserted. For demo purposes I added mock www.better.si API URL, which doesn't return anything.
 
-Main features are lazy loading modules, stateless/stateful components, unit tests. Implementing RxJS would be an overkill for this kind of app.
+Main features are lazy loading modules, stateless/stateful components, unit tests. Implementing extra RxJS for cross component communication would be an overkill for this kind of app.
 
 Demo can be done on tech hire meeting. Wireframes in pdf are included.
 
